@@ -1,0 +1,103 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f0f0f0;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styling */
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: left; /* Left-aligned header */
+}
+
+/* Container and Card Styling */
+.main-content {
+    padding: 20px;
+    flex: 1;
+}
+
+.container {
+    display: grid;
+    gap: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    margin: 15px;
+}
+
+.card p {
+    font-size: 1rem;
+    margin: 0 15px 15px;
+    color: #666;
+}
+
+/* Hover Effect */
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Responsive Layouts */
+
+/* Mobile Layout: 1 Column */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Tablet Layout: 2 Columns */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Last card full width */
+    .container .card:nth-child(odd):last-child {
+        grid-column: span 2;
+    }
+}
+
+/* Desktop Layout: 3 Columns */
+@media (min-width: 1200px) {
+    .container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
